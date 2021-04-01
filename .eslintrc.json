@@ -1,51 +1,22 @@
 {
-  "env": {
-    "browser": true,
-    "es2021": true,
-    "node": true,
-    "jest/globals": true
-  },
-  "extends": [
-    "plugin:react/recommended",
-    "airbnb",
-    "prettier",
-    "prettier/react"
-  ],
-  "parserOptions": {
-    "ecmaFeatures": {
-      "jsx": true
+    "env": {
+        "browser": true,
+        "es2021": true
     },
-    "ecmaVersion": 12,
-    "sourceType": "module"
-  },
-  "plugins": ["react", "prettier", "jest", "react-hooks"],
-  "rules": {
-    "react/jsx-filename-extension": [
-      1,
-      {
-        "extensions": [".js", ".jsx"]
-      }
+    "extends": [
+        "plugin:react/recommended",
+        "airbnb"
     ],
-    "no-unused-vars": "off",
-    "no-unreachable": "off",
-    "no-debugger": "off",
-    "no-warning-comments": ["warn", { "location": "anywhere" }],
-    "react/jsx-props-no-spreading": "off",
-    "react/forbid-prop-types": "off",
-    "react/require-default-props": [1, { "ignoreFunctionalComponents": true }],
-    "jsx-quotes": [2, "prefer-double"],
-    "no-trailing-spaces": "off",
-    "jest/no-disabled-tests": "warn",
-    "jest/no-focused-tests": "error",
-    "jest/no-identical-title": "error",
-    "jest/prefer-to-have-length": "warn",
-    "jest/valid-expect": "error",
-    "no-console": "off",
-    "no-underscore-dangle": "off",
-    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
-    "react/button-has-type": "off",
-    "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn",
-    "jsx-a11y/alt-text": "off"
-  }
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 12,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react"
+    ],
+    "rules": {
+    }
 }

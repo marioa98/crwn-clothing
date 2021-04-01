@@ -1,0 +1,11 @@
+{
+  "extends": ".eslintrc.json",
+  "rules": {
+    "no-trailing-spaces": "error",
+    "no-debugger": "error",
+    "no-unused-vars": "error",
+    "no-unreachable": "error",
+    "spaced-comment": "error",
+    "react/prop-types": "error"
+  }
+}
