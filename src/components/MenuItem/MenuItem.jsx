@@ -3,16 +3,23 @@ import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 
-const MenuItem = ({ id, imageUrl, size, subtitle = "shop now", title, theme }) => (
-  <div
-    style={{
-      backgroundImage: `url(${imageUrl})`
-    }}
-    className={classNames(theme.menuItem, {
-      [theme.large]: size === "large"
-    })}
-    id={id}
-  >
+const MenuItem = ({
+  id,
+  imageUrl,
+  size,
+  subtitle = "shop now",
+  title,
+  theme
+}) => (
+  <div className={theme.menuItem} id={id}>
+    <div
+      style={{
+        backgroundImage: `url(${imageUrl})`
+      }}
+      className={classNames(theme.backgroundImage, {
+        [theme.large]: size === "large"
+      })}
+    />
     <div className={theme.content}>
       <h1 className={theme.title}>{title}</h1>
       <span className={theme.subtitle}>{subtitle}</span>
