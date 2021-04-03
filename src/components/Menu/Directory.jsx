@@ -1,7 +1,7 @@
 import React from "react";
 
 import sections from "../../utils/defaults/sections";
-import MenuItem from "./MenuItem/MenuItem";
+import MenuItem from "../Directory/MenuItem/MenuItem";
 import theme from "./Directory.module.scss";
 
 class Directory extends React.Component {
