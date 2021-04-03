@@ -1,4 +1,3 @@
-/* eslint-disable */
 import React from "react";
 
 import sections from "../../utils/defaults/sections";
