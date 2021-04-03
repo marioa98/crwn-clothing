@@ -24,7 +24,6 @@ class Directory extends React.Component {
             imageUrl={imageUrl}
             size={size}
             title={title}
-            theme={theme}
           />
         ))}
       </div>

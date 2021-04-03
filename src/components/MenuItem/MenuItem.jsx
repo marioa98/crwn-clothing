@@ -1,14 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
+import theme from "./MenuItem.module.scss";
 
 const MenuItem = ({
   id,
   imageUrl,
   size,
   subtitle = "shop now",
-  title,
-  theme
+  title
 }) => (
   <div className={theme.menuItem} id={id}>
     <div
@@ -31,8 +31,7 @@ MenuItem.propTypes = {
   imageUrl: PropTypes.string,
   size: PropTypes.string,
   subtitle: PropTypes.string,
-  title: PropTypes.string,
-  theme: PropTypes.object
+  title: PropTypes.string
 };
 
 export default MenuItem;
