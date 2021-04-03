@@ -1,4 +1,3 @@
-/* eslint-disable */
 import React from "react";
 
 import sections from "../../utils/defaults/sections";
@@ -18,13 +17,13 @@ class Directory extends React.Component {
 
     return (
       <div className={theme.directoryMenu}>
-        {menuItems.map(({ id, imageUrl, title }) => (
+        {menuItems.map(({ id, imageUrl, size, title }) => (
           <MenuItem
             key={id}
             id={id}
             imageUrl={imageUrl}
+            size={size}
             title={title}
-            theme={theme}
           />
         ))}
       </div>

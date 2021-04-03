@@ -2,10 +2,24 @@
   "name": "crwn-clothing-2",
   "version": "0.1.0",
   "private": true,
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "npm run test:once"
+    }
+  },
+  "lint-staged": {
+    "./**/*.{js,jsx,ts,tsx}": [
+      "npm run prettier",
+      "eslint --fix --config .eslintrc.pre-commit.json",
+      "prettier --check './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc"
+    ]
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "classnames": "^2.2.6",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -13,10 +27,13 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "DISABLE_ESLINT_PLUGIN=true react-scripts start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test:once": "react-scripts test --watchAll=false --passWithNoTests",
+    "eject": "react-scripts eject",
+    "lint": "eslint --fix . --ignore-path ./.gitignore && prettier --check './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc",
+    "prettier": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc"
   },
   "eslintConfig": {
     "extends": [
@@ -39,10 +56,15 @@
   "devDependencies": {
     "eslint": "^7.23.0",
     "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-react": "^7.23.1",
     "eslint-plugin-react-hooks": "^4.2.0",
-    "node-sass": "^5.0.0"
+    "husky": "^6.0.0",
+    "lint-staged": "^10.5.4",
+    "node-sass": "^5.0.0",
+    "prettier": "^2.2.1"
   }
 }
