@@ -3,21 +3,18 @@ import PropTypes from "prop-types";
 import classNames from "classnames";
 import theme from "./MenuItem.module.scss";
 
-const MenuItem = ({
-  id,
-  imageUrl,
-  size,
-  subtitle = "shop now",
-  title
-}) => (
-  <div className={theme.menuItem} id={id}>
+const MenuItem = ({ id, imageUrl, size, subtitle = "shop now", title }) => (
+  <div
+    className={classNames(theme.menuItem, {
+      [theme.large]: size === "large"
+    })}
+    id={id}
+  >
     <div
+      className={theme.backgroundImage}
       style={{
         backgroundImage: `url(${imageUrl})`
       }}
-      className={classNames(theme.backgroundImage, {
-        [theme.large]: size === "large"
-      })}
     />
     <div className={theme.content}>
       <h1 className={theme.title}>{title}</h1>
