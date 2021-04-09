@@ -1,12 +1,12 @@
 import React from "react";
+import { BrowserRouter } from "react-router-dom";
 import "./App.scss";
-
-import Home from "./views/Home/Home";
+import Routes from "./routes";
 
 const App = () => (
-  <div>
-    <Home />
-  </div>
+  <BrowserRouter>
+    <Routes/>
+  </BrowserRouter>
 );
 
 export default App;
