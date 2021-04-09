@@ -1,15 +1,20 @@
 import React from "react";
 import PropTypes from "prop-types";
-import classNames from "classnames";
+import { withRouter } from "react-router-dom";
+
 import theme from "./MenuItem.module.scss";
 
-const MenuItem = ({ id, imageUrl, size, subtitle = "shop now", title }) => (
-  <div
-    className={classNames(theme.menuItem, {
-      [theme.large]: size === "large"
-    })}
-    id={id}
-  >
+const MenuItem = ({
+  history,
+  id,
+  imageUrl,
+  linkUrl,
+  match,
+  size,
+  subtitle = "shop now",
+  title
+}) => (
+  <div className={`${size} ${theme.menuItem}`} id={id} onClick={() => history.push(`${match.url}${linkUrl}`)}>
     <div
       className={theme.backgroundImage}
       style={{
@@ -24,11 +29,14 @@ const MenuItem = ({ id, imageUrl, size, subtitle = "shop now", title }) => (
 );
 
 MenuItem.propTypes = {
+  history: PropTypes.object,
   id: PropTypes.number,
   imageUrl: PropTypes.string,
+  linkUrl: PropTypes.string,
+  match: PropTypes.object,
   size: PropTypes.string,
   subtitle: PropTypes.string,
   title: PropTypes.string
 };
 
-export default MenuItem;
+export default withRouter(MenuItem);
