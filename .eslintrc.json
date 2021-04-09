@@ -20,7 +20,7 @@
         "extensions": [".js", ".jsx"]
       }
     ],
-    "no-unused-vars": "off",
+    "no-unused-vars": "error",
     "no-unreachable": "off",
     "no-debugger": "off",
     "no-warning-comments": ["warn", { "location": "anywhere" }],
@@ -42,6 +42,8 @@
     "react-hooks/exhaustive-deps": "warn",
     "jsx-a11y/alt-text": "off",
     "spaced-comment": "off",
-    "react/prop-types": "warn"
+    "react/prop-types": "error",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/no-static-element-interactions": "off"
   }
 }
