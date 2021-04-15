@@ -14,7 +14,11 @@ const MenuItem = ({
   subtitle = "shop now",
   title
 }) => (
-  <div className={`${size} ${theme.menuItem}`} id={id} onClick={() => history.push(`${match.url}${linkUrl}`)}>
+  <div
+    className={`${size} ${theme.menuItem}`}
+    id={id}
+    onClick={() => history.push(`${match.url}${linkUrl}`)}
+  >
     <div
       className={theme.backgroundImage}
       style={{
