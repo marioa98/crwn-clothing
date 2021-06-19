@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import theme from "./CollectionPreview.module.scss";
-import CollectionItem from "../CollectionItem/CollectionItem";
+import CollectionItem from "./CollectionItem/CollectionItem";
 
 const MAX_ITEMS = 4;
 

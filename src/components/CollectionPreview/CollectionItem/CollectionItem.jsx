@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import theme from "./CollectionItem.module.scss";
-import toCurrency from "../../lib/toCurrency";
+import toCurrency from "../../../lib/toCurrency";
 
 // eslint-disable-next-line no-unused-vars
 const CollectionItem = ({ id, name, price, imageUrl }) => (
