@@ -1,0 +1,18 @@
+{
+  "buttons": {
+    "signIn": "Iniciar sesión"
+  },
+  "inputs": {
+    "email": "Correo electrónico",
+    "password": "Contraseña"
+  },
+  "menu": {
+    "shop": "TIENDA",
+    "contact": "CONTACTO"
+  },
+  "signIn": {
+    "title": "Iniciar sesión",
+    "subtitle": "Ya tengo una cuenta",
+    "message": "Registrate usando tu email y contraseña"
+  }
+}
