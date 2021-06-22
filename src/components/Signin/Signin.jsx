@@ -1,66 +1,62 @@
-import React from "react";
+import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 import Input from "../shared/Input/Input";
 import Button from "../shared/Button/Button";
 import theme from "./Signin.module.scss";
 
-class SignIn extends React.Component {
-  constructor(props) {
-    super(props);
+const initialState = {
+  email: "",
+  password: ""
+}
 
-    this.state = {
-      email: "",
-      password: ""
-    };
+const SignIn = () => {
+  const [state, setState] = useState(initialState)
+  const { t } = useTranslation(["signIn", "inputs", "buttons"])
+
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    setState(initialState)
   }
 
-  handleSubmit = (event) => {
-    event.preventDefault();
-    this.setState({ email: "", password: "" });
+  const handleChange = ({ target }) => {
+    const { value, name } = target;
+
+    setState((prevState) => ({...prevState, [name]: value}));
   };
 
-  handleChange = (event) => {
-    const { value, name } = event.target;
+  return(
+    <div className={theme.signInForm}>
+        <h2>{t("subtitle")}</h2>
+        <span>{t("message")}</span>
 
-    this.setState({[name]: value});
-  };
-
-  render() {
-    const { email, password } = this.state;
-
-    return (
-      <div className={theme.signInForm}>
-        <h2>I already have an account</h2>
-        <span>Sign in with your email and password</span>
-
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={handleSubmit}>
           <Input
             id="email"
             type="email"
             name="email"
-            onChange={this.handleChange}
-            value={email}
+            onChange={handleChange}
+            value={state.email}
             required
-            label="Email"
+            label={t("inputs:email")}
           />
 
           <Input
             id="password"
             type="password"
             name="password"
-            value={password}
-            onChange={this.handleChange }
+            value={state.password}
+            onChange={handleChange }
             required
-            label="Password"
+            label={t("inputs:password")}
           />
 
           <Button type="submit">
-            Sign in
+            {t("buttons:signIn")}
           </Button>
         </form>
       </div>
-    );
-  }
+  )
 }
 
 export default SignIn;

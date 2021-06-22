@@ -1,0 +1,18 @@
+{
+  "buttons": {
+    "signIn": "Sign in"
+  },
+  "inputs": {
+    "email": "Email",
+    "password": "Password"
+  },
+  "menu": {
+    "shop": "SHOP",
+    "contact": "CONTACT"
+  },
+  "signIn": {
+    "title": "Sign in",
+    "subtitle": "I already have an account",
+    "message": "Sign in with your email and password"
+  }
+}
