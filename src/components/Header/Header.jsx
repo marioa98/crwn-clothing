@@ -14,7 +14,7 @@ const Header = () => {
       <Link className={theme.logoContainer} to="/">
         <Logo className={theme.logo} />
       </Link>
-  
+
       <div className={theme.options}>
         <Link className={theme.option} to={endpoints.shop.root}>
           {t("shop")}
@@ -24,7 +24,7 @@ const Header = () => {
         </Link>
       </div>
     </div>
-  )
+  );
 };
 
 export default Header;

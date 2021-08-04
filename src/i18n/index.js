@@ -5,7 +5,7 @@ import LanguageDetector from "i18next-browser-languagedetector";
 import englishLocale from "./locales/en/en.json";
 import spanishLocale from "./locales/es/es.json";
 
-const DEFAULT_LOCALE = "en"
+const DEFAULT_LOCALE = "en";
 
 i18n
   .use(LanguageDetector)
@@ -17,6 +17,6 @@ i18n
     },
     fallbackLng: DEFAULT_LOCALE,
     keySeparator: false
-  })
+  });
 
 export default i18n;

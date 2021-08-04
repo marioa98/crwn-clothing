@@ -4,7 +4,7 @@ import SignIn from "../../components/Signin/Signin";
 
 const SigninAndSignup = () => (
   <>
-    <SignIn/>
+    <SignIn />
   </>
 );
 

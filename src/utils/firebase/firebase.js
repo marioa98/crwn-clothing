@@ -21,18 +21,18 @@ export const firestore = firebase.firestore();
 
 // Google authentication utility
 
-const provider = new firebase.auth.GoogleAuthProvider() // Give acccess to the provider's authentincation library.
+const provider = new firebase.auth.GoogleAuthProvider(); // Give acccess to the provider's authentincation library.
 /**
  * As the name says, firebase allows to set some custom parameters on the authentication
  * method.
- * 
+ *
  * @see https://developers.google.com/identity/protocols/oauth2/openid-connect#authenticationuriparameters.
- * 
- * - prompt (none/consent/select_account) - A space-delimited list of string values that specifies 
+ *
+ * - prompt (none/consent/select_account) - A space-delimited list of string values that specifies
  *    whether the authorization server prompts the user for reauthentication and consent.
  */
 
-provider.setCustomParameters({ prompt: "select_account" })
+provider.setCustomParameters({ prompt: "select_account" });
 export const signInWithGoogle = () => auth.signInWithPopup(provider);
 
 export default firebase;
