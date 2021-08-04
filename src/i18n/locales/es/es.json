@@ -1,5 +1,6 @@
 {
   "buttons": {
+    "googleSignIn": "Iniciar sesión con Google",
     "signIn": "Iniciar sesión"
   },
   "inputs": {

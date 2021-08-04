@@ -3,6 +3,8 @@ import { useTranslation } from "react-i18next";
 
 import Input from "../shared/Input/Input";
 import Button from "../shared/Button/Button";
+import { signInWithGoogle } from "../../utils/firebase/firebase";
+
 import theme from "./Signin.module.scss";
 
 const initialState = {
@@ -53,6 +55,10 @@ const SignIn = () => {
 
           <Button type="submit">
             {t("buttons:signIn")}
+          </Button>
+
+          <Button onClick={signInWithGoogle}>
+            {t("buttons:googleSignIn")}
           </Button>
         </form>
       </div>

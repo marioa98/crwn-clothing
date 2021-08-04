@@ -1,5 +1,6 @@
 {
   "buttons": {
+    "googleSignIn": "Sign in with Google",
     "signIn": "Sign in"
   },
   "inputs": {
