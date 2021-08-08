@@ -6,7 +6,7 @@ import Routes from "./routes";
 import { auth } from "./utils/firebase/firebase";
 
 const App = () => {
-  const [, setCurrentUser] = useState();
+  const [currentUser, setCurrentUser] = useState();
 
   useEffect(() => {
     /**
@@ -17,13 +17,17 @@ const App = () => {
     const unsuscribeFromAuth = auth.onAuthStateChanged((user) => setCurrentUser(user));
 
     return () => {
+      /**
+       * Unsuscribe the google service when the app is unmounted to prevent
+       * memory leaks.
+       */
       unsuscribeFromAuth();
     }
   }, [])
 
   return (
     <BrowserRouter>
-      <Header />
+      <Header currentUser={currentUser} />
       <Routes />
     </BrowserRouter>
   );
