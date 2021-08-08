@@ -8,8 +8,10 @@
     "password": "Password"
   },
   "menu": {
-    "shop": "SHOP",
-    "contact": "CONTACT"
+    "contact": "CONTACT",
+    "signIn": "SIGN IN",
+    "signOut": "SIGN OUT",
+    "shop": "SHOP"
   },
   "signIn": {
     "title": "Sign in",

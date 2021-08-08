@@ -8,8 +8,10 @@
     "password": "Contraseña"
   },
   "menu": {
-    "shop": "TIENDA",
-    "contact": "CONTACTO"
+    "contact": "CONTACTO",
+    "signIn": "INICIAR SESIÓN",
+    "signOut": "CERRAR SESIÓN",
+    "shop": "TIENDA"
   },
   "signIn": {
     "title": "Iniciar sesión",
