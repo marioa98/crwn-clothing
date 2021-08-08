@@ -25,20 +25,22 @@ const Header = ({ currentUser }) => {
         <Link className={theme.option} to={endpoints.contact}>
           {t("contact")}
         </Link>
-        {
-          currentUser ? (
-            <div className={theme.option} onClick={() => auth.signOut()}>{t("signOut")}</div>
-          ) : (
-            <Link className={theme.option} to={endpoints.signIn}>{t("signIn")}</Link>
-          )
-        }
+        {currentUser ? (
+          <div className={theme.option} onClick={() => auth.signOut()}>
+            {t("signOut")}
+          </div>
+        ) : (
+          <Link className={theme.option} to={endpoints.signIn}>
+            {t("signIn")}
+          </Link>
+        )}
       </div>
     </div>
   );
 };
 
 Header.propTypes = {
-  currentUser: PropTypes.object 
-}
+  currentUser: PropTypes.object
+};
 
 export default Header;

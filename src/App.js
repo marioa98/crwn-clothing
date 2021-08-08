@@ -14,7 +14,9 @@ const App = () => {
      * to persists user session.
      * @see https://firebase.google.com/docs/reference/js/firebase.auth.Auth#onauthstatechanged
      */
-    const unsuscribeFromAuth = auth.onAuthStateChanged((user) => setCurrentUser(user));
+    const unsuscribeFromAuth = auth.onAuthStateChanged((user) =>
+      setCurrentUser(user)
+    );
 
     return () => {
       /**
@@ -22,8 +24,8 @@ const App = () => {
        * memory leaks.
        */
       unsuscribeFromAuth();
-    }
-  }, [])
+    };
+  }, []);
 
   return (
     <BrowserRouter>
@@ -31,6 +33,6 @@ const App = () => {
       <Routes />
     </BrowserRouter>
   );
-}
+};
 
 export default App;
