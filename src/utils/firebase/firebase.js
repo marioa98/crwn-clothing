@@ -22,6 +22,7 @@ export const firestore = firebase.firestore();
 // Google authentication utility
 
 const provider = new firebase.auth.GoogleAuthProvider(); // Give acccess to the provider's authentincation library.
+auth.useDeviceLanguage(); // Google sign-in form uses device language to render its text.
 /**
  * As the name says, firebase allows to set some custom parameters on the authentication
  * method.
