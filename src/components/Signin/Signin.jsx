@@ -53,9 +53,12 @@ const SignIn = () => {
           label={t("inputs:password")}
         />
 
-        <Button type="submit">{t("buttons:signIn")}</Button>
-
-        <Button onClick={signInWithGoogle}>{t("buttons:googleSignIn")}</Button>
+        <div className={theme.buttons}>
+          <Button type="submit">{t("buttons:signIn")}</Button>
+          <Button onClick={signInWithGoogle} isGoogle>
+            {t("buttons:googleSignIn")}
+          </Button>
+        </div>
       </form>
     </div>
   );
