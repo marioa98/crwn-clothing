@@ -63,7 +63,7 @@ const SignIn = () => {
 
         <div className={theme.buttons}>
           <Button type="submit">{t("buttons:signIn")}</Button>
-          <Button onClick={signInWithGoogle} isGoogle>
+          <Button type="button" onClick={signInWithGoogle} isGoogle>
             {t("buttons:googleSignIn")}
           </Button>
         </div>
