@@ -4,10 +4,15 @@ import PropTypes from "prop-types";
 
 import theme from "./Input.module.scss";
 
-const Input = ({ label, onChange, value="", ...props }) => (
+const Input = ({ label, onChange, value = "", ...props }) => (
   <div className={theme.inputContainer}>
-    <input className={theme.input} onChange={onChange} value={value}  {...props} />
-    { label && (
+    <input
+      className={theme.input}
+      onChange={onChange}
+      value={value}
+      {...props}
+    />
+    {label && (
       <label
         className={classNames(theme.inputLabel, {
           [theme.shrink]: !!value?.length
@@ -15,7 +20,7 @@ const Input = ({ label, onChange, value="", ...props }) => (
       >
         {label}
       </label>
-    ) }
+    )}
   </div>
 );
 
@@ -24,6 +29,6 @@ Input.propTypes = {
   onChange: PropTypes.func,
   value: PropTypes.string,
   props: PropTypes.object
-}
+};
 
 export default Input;

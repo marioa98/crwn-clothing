@@ -1,18 +1,31 @@
 {
   "buttons": {
-    "signIn": "Sign in"
+    "googleSignIn": "Sign in with Google",
+    "signIn": "Sign in",
+    "signUp": "Sign up"
   },
   "inputs": {
+    "confirmPassword": "Confirm password",
+    "displayName": "Display name",
     "email": "Email",
     "password": "Password"
   },
   "menu": {
+    "contact": "CONTACT",
     "shop": "SHOP",
-    "contact": "CONTACT"
+    "signIn": "SIGN IN",
+    "signOut": "SIGN OUT"
+  },
+  "messages": {
+    "passwordUnmatch": "Passwords do not match"
   },
   "signIn": {
-    "title": "Sign in",
+    "message": "Sign in with your email and password",
     "subtitle": "I already have an account",
-    "message": "Sign in with your email and password"
+    "title": "Sign in"
+  },
+  "signUp": {
+    "message": "Sign up with your email and password",
+    "title": "I do not have an account"
   }
 }

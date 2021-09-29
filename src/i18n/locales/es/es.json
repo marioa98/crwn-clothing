@@ -1,18 +1,31 @@
 {
   "buttons": {
-    "signIn": "Iniciar sesión"
+    "googleSignIn": "Iniciar sesión con Google",
+    "signIn": "Iniciar sesión",
+    "signUp": "Registrarse"
   },
   "inputs": {
+    "confirmPassword": "Confirmar contraseña",
+    "displayName": "Nombre a mostrar",
     "email": "Correo electrónico",
     "password": "Contraseña"
   },
   "menu": {
+    "contact": "CONTACTO",
     "shop": "TIENDA",
-    "contact": "CONTACTO"
+    "signIn": "INICIAR SESIÓN",
+    "signOut": "CERRAR SESIÓN"
+  },
+  "messages": {
+    "passwordUnmatch": "Las contraseñas no coinciden"
   },
   "signIn": {
-    "title": "Iniciar sesión",
+    "message": "Registrate usando tu email y contraseña",
     "subtitle": "Ya tengo una cuenta",
-    "message": "Registrate usando tu email y contraseña"
+    "title": "Iniciar sesión"
+  },
+  "signUp": {
+    "message": "Registrate con tu correo electrónico y contraseña",
+    "title": "No tengo una cuenta"
   }
 }
