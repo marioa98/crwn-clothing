@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 
 import Input from "../shared/Input/Input";
 import Button from "../shared/Button/Button";
-import { signInWithGoogle } from "../../utils/firebase/firebase";
+import { auth, signInWithGoogle } from "../../utils/firebase/firebase";
 
 import theme from "./Signin.module.scss";
 
@@ -16,9 +16,17 @@ const SignIn = () => {
   const [state, setState] = useState(initialState);
   const { t } = useTranslation(["signIn", "inputs", "buttons"]);
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    setState(initialState);
+
+    const { email, password } = state;
+
+    try {
+      await auth.signInWithEmailAndPassword(email, password);
+      setState(initialState);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   const handleChange = ({ target }) => {
