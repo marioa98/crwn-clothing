@@ -15,7 +15,7 @@ const App = () => {
      * @see https://firebase.google.com/docs/reference/js/firebase.auth.Auth#onauthstatechanged
      */
     const unsuscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
-      if(userAuth){
+      if (userAuth) {
         const userRef = await createUserProfileDocument(userAuth);
 
         /**
@@ -27,13 +27,13 @@ const App = () => {
           setCurrentUser({
             id: snapShot.id,
             ...snapShot.data()
-          })
-        })
+          });
+        });
       }
 
       // Sets current user to null if user sign out
       setCurrentUser(userAuth);
-    } );
+    });
 
     return () => {
       /**
