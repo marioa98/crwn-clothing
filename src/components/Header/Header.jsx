@@ -9,6 +9,7 @@ import endpoints from "../../lib/endpoints.json";
 import theme from "./Header.module.scss";
 
 import { auth } from "../../utils/firebase/firebase";
+import ShoppingCart from "../ShoppingCart/ShoppingCart";
 
 const Header = ({ currentUser }) => {
   const { t } = useTranslation("menu");
@@ -35,6 +36,7 @@ const Header = ({ currentUser }) => {
             {t("signIn")}
           </Link>
         )}
+        <ShoppingCart />
       </div>
     </div>
   );
