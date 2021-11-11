@@ -48,6 +48,7 @@
     "jsx-a11y/no-static-element-interactions": "off",
     "jsx-a11y/label-has-associated-control": "off",
     "react/prefer-stateless-function": "warn",
-    "no-useless-return": "off"
+    "no-useless-return": "off",
+    "consistent-return": "off"
   }
 }
