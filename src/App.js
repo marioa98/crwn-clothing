@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from "react";
+import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
-import "./App.scss";
+
 import Header from "./components/Header/Header";
 import Routes from "./routes";
+import store from "./redux/store";
 import { auth, createUserProfileDocument } from "./utils/firebase/firebase";
+
+import "./App.scss";
 
 const App = () => {
   const [currentUser, setCurrentUser] = useState();
@@ -45,10 +49,12 @@ const App = () => {
   }, []);
 
   return (
-    <BrowserRouter>
-      <Header currentUser={currentUser} />
-      <Routes />
-    </BrowserRouter>
+    <Provider store={store}>
+      <BrowserRouter>
+        <Header currentUser={currentUser} />
+        <Routes />
+      </BrowserRouter>
+    </Provider>
   );
 };
 
