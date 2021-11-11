@@ -1,12 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
+import PropTypes from 'prop-types';
+import { connect } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
-import "./App.scss";
+
 import Header from "./components/Header/Header";
 import Routes from "./routes";
 import { auth, createUserProfileDocument } from "./utils/firebase/firebase";
+import { setCurrentUser as setCurrentUserAction } from "./redux/user/actions";
 
-const App = () => {
-  const [currentUser, setCurrentUser] = useState();
+import "./App.scss";
+
+const App = ({ setCurrentUser }) => {
 
   useEffect(() => {
     /**
@@ -46,10 +50,18 @@ const App = () => {
 
   return (
     <BrowserRouter>
-      <Header currentUser={currentUser} />
+      <Header />
       <Routes />
     </BrowserRouter>
   );
 };
 
-export default App;
+App.propTypes = {
+  setCurrentUser: PropTypes.func
+};
+
+const mapDispatchToProps = (dispatch) => ({
+  setCurrentUser: user => dispatch(setCurrentUserAction(user))
+});
+
+export default connect(null, mapDispatchToProps)(App);
