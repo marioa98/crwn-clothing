@@ -2,6 +2,7 @@
 import React from "react";
 import CollectionPreview from "../../components/CollectionPreview/CollectionPreview";
 import collections from "../../utils/defaults/collections";
+import theme from './Shop.module.scss';
 
 class Shop extends React.Component {
   constructor(props) {
@@ -15,7 +16,7 @@ class Shop extends React.Component {
   render() {
     const { collections: collectionItems } = this.state;
     return (
-      <div className="shop-page">
+      <div className={theme.container}>
         {collectionItems.map(({ id, ...otherCollectionProps }) => (
           <CollectionPreview key={id} {...otherCollectionProps} />
         ))}
