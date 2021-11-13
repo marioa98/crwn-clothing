@@ -4,9 +4,9 @@ import classNames from "classnames";
 
 import theme from "./Button.module.scss";
 
-const Button = ({ children, isGoogle = false, inverted, ...props }) => (
+const Button = ({ children, isGoogle = false, inverted, style, ...props }) => (
   <button
-    className={classNames(theme.button, {
+    className={classNames(theme.button, style?.button, {
       [theme.google]: isGoogle,
       [theme.inverted]: inverted
     })}
@@ -20,7 +20,8 @@ Button.propTypes = {
   children: PropTypes.any,
   isGoogle: PropTypes.bool,
   inverted: PropTypes.bool,
-  props: PropTypes.object
+  props: PropTypes.object,
+  style: PropTypes.object
 };
 
 export default Button;
