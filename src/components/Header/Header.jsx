@@ -10,8 +10,9 @@ import theme from "./Header.module.scss";
 
 import { auth } from "../../utils/firebase/firebase";
 import ShoppingCart from "../ShoppingCart/ShoppingCart";
+import ShoppingCartDropdown from "../ShoppingCart/ShoppingCartDropdown";
 
-const Header = ({ currentUser }) => {
+const Header = ({ currentUser, isCartHidden }) => {
   const { t } = useTranslation("menu");
 
   return (
@@ -38,16 +39,22 @@ const Header = ({ currentUser }) => {
         )}
         <ShoppingCart />
       </div>
+      {!isCartHidden && <ShoppingCartDropdown />}
     </div>
   );
 };
 
 Header.propTypes = {
-  currentUser: PropTypes.object
+  currentUser: PropTypes.object,
+  isCartHidden: PropTypes.bool
 };
 
-const mapStateToProps = (state) => ({
-  currentUser: state.user.currentUser
-});
+const mapStateToProps = (state) => {
+  const { cart, user } = state
+  return {
+    currentUser: user.currentUser,
+    isCartHidden: cart.isCartHidden
+  }
+};
 
 export default connect(mapStateToProps)(Header);

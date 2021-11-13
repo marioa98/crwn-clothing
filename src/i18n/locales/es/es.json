@@ -4,6 +4,9 @@
     "signIn": "Iniciar sesión",
     "signUp": "Registrarse"
   },
+  "cart": {
+    "checkout": "Proceder al pago"
+  },
   "inputs": {
     "confirmPassword": "Confirmar contraseña",
     "displayName": "Nombre a mostrar",

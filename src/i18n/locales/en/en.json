@@ -4,6 +4,9 @@
     "signIn": "Sign in",
     "signUp": "Sign up"
   },
+  "cart": {
+    "checkout": "Go to checkout"
+  },
   "inputs": {
     "confirmPassword": "Confirm password",
     "displayName": "Display name",
