@@ -12,7 +12,7 @@ const Button = ({ children, isGoogle = false, inverted, style, ...props }) => (
     })}
     {...props}
   >
-    {children} 
+    {children}
   </button>
 );
 

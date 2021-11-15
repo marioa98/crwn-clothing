@@ -26,7 +26,7 @@ const CollectionItem = ({ item, addItem }) => {
         {t("add")}
       </Button>
     </div>
-  )
+  );
 };
 
 CollectionItem.propTypes = {
@@ -36,11 +36,11 @@ CollectionItem.propTypes = {
     imageUrl: PropTypes.string,
     name: PropTypes.string,
     price: PropTypes.number
-  }),
+  })
 };
 
 const mapDispatchToProps = (dispatch) => ({
   addItem: (newItem) => dispatch(addItemAction(newItem))
-})
+});
 
 export default connect(null, mapDispatchToProps)(CollectionItem);

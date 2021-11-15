@@ -1,8 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-import toCurrency from '../../lib/toCurrency';
-import theme from './ShoppingCartItem.module.scss';
+import toCurrency from "../../lib/toCurrency";
+import theme from "./ShoppingCartItem.module.scss";
 
 const ShoppingCartItem = ({ item: { imageUrl, price, name, quantity } }) => (
   <div className={theme.item}>
@@ -23,6 +23,6 @@ ShoppingCartItem.propTypes = {
     quantity: PropTypes.number,
     price: PropTypes.number
   })
-}
+};
 
 export default ShoppingCartItem;

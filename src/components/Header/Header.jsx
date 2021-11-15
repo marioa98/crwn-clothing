@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { connect } from 'react-redux';
+import { connect } from "react-redux";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
@@ -50,11 +50,11 @@ Header.propTypes = {
 };
 
 const mapStateToProps = (state) => {
-  const { cart, user } = state
+  const { cart, user } = state;
   return {
     currentUser: user.currentUser,
     isCartHidden: cart.isCartHidden
-  }
+  };
 };
 
 export default connect(mapStateToProps)(Header);

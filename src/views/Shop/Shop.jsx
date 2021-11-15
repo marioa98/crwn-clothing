@@ -2,7 +2,7 @@
 import React from "react";
 import CollectionPreview from "../../components/CollectionPreview/CollectionPreview";
 import collections from "../../utils/defaults/collections";
-import theme from './Shop.module.scss';
+import theme from "./Shop.module.scss";
 
 class Shop extends React.Component {
   constructor(props) {
