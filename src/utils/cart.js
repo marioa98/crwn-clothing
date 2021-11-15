@@ -8,7 +8,7 @@ const addItemToCart = (currentItems = [], newItem) => {
       if (item?.id === newItem?.id) {
         return {
           ...item,
-          total: item.quantity + 1
+          quantity: item.quantity + 1
         }
       };
 
