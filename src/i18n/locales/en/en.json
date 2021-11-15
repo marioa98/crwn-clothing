@@ -5,6 +5,7 @@
     "signUp": "Sign up"
   },
   "cart": {
+    "add": "Add to cart",
     "checkout": "Go to checkout"
   },
   "inputs": {

@@ -6,19 +6,27 @@ import { toggleCartHidden as toggleCartHiddenAction } from '../../redux/cart/act
 
 import theme from './ShoppingCart.module.scss';
 
-const ShoppingCart = ({ toggleCartHidden }) => (
+const ShoppingCart = ({ toggleCartHidden, totalItems }) => (
   <div className={theme.cartIcon} onClick={toggleCartHidden}>
     <ShoppingBagIcon className={theme.shoppingIcon} />
-    <span className={theme.itemsCount}>0</span>
+    <span className={theme.itemsCount}>{totalItems}</span>
   </div>
 )
 
 ShoppingCart.propTypes = {
-  toggleCartHidden: PropTypes.func
+  toggleCartHidden: PropTypes.func,
+  totalItems: PropTypes.number
+}
+
+const mapStateToProps = (state) => {
+  const { cart } = state;
+  return {
+    totalItems: cart.items.length
+  }
 }
 
 const mapDispatchToProps = (dispatch) => ({
   toggleCartHidden: () => dispatch(toggleCartHiddenAction())
 });
 
-export default connect(null, mapDispatchToProps)(ShoppingCart);
+export default connect(mapStateToProps, mapDispatchToProps)(ShoppingCart);

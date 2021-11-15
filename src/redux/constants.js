@@ -4,6 +4,7 @@ export const ACTIONS = {
     SET_CURRENT_USER: "SET_CURRENT_USER"
   },
   cart: {
+    ADD_ITEM: "ADD_ITEMS",
     TOGGLE_CART_HIDDEN: "TOGGLE_CART_HIDDEN"
   }
 };

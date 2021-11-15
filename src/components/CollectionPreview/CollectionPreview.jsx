@@ -12,8 +12,8 @@ const CollectionPreview = ({ items = [], title }) => (
     <div className={theme.preview}>
       {items
         .filter((_item, index) => index < MAX_ITEMS)
-        .map(({ id, ...itemProps }) => (
-          <CollectionItem key={id} id={id} {...itemProps} />
+        .map((item) => (
+          <CollectionItem key={item.id} item={item} />
         ))}
     </div>
   </div>

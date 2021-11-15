@@ -5,6 +5,7 @@
     "signUp": "Registrarse"
   },
   "cart": {
+    "add": "Agregar al carrito",
     "checkout": "Proceder al pago"
   },
   "inputs": {
