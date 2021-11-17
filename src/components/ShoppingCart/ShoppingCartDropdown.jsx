@@ -1,14 +1,15 @@
 import React from "react";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
+import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 import Button from "../shared/Button/Button";
 
 import theme from "./ShoppingCartDropdown.module.scss";
 import ShoppingCartItem from "../ShoppingCartItem/ShoppingCartItem";
+import { selectItems } from "../../redux/cart/selectors";
 
-const ShoppingCartDropdown = ({ items }) => {
+const ShoppingCartDropdown = () => {
   const { t } = useTranslation("cart");
+  const items = useSelector(selectItems)
 
   return (
     <div className={theme.dropdown}>
@@ -22,15 +23,4 @@ const ShoppingCartDropdown = ({ items }) => {
   );
 };
 
-ShoppingCartDropdown.propTypes = {
-  items: PropTypes.array
-};
-
-const mapStateToProps = (state) => {
-  const { cart } = state;
-  return {
-    items: cart.items
-  };
-};
-
-export default connect(mapStateToProps)(ShoppingCartDropdown);
+export default ShoppingCartDropdown;
