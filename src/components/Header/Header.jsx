@@ -11,6 +11,7 @@ import theme from "./Header.module.scss";
 import { auth } from "../../utils/firebase/firebase";
 import ShoppingCart from "../ShoppingCart/ShoppingCart";
 import ShoppingCartDropdown from "../ShoppingCart/ShoppingCartDropdown";
+import { selectCurrentUser } from "../../redux/user/selectors";
 
 const Header = ({ currentUser, isCartHidden }) => {
   const { t } = useTranslation("menu");
@@ -50,9 +51,9 @@ Header.propTypes = {
 };
 
 const mapStateToProps = (state) => {
-  const { cart, user } = state;
+  const { cart } = state;
   return {
-    currentUser: user.currentUser,
+    currentUser: selectCurrentUser(state),
     isCartHidden: cart.isCartHidden
   };
 };
