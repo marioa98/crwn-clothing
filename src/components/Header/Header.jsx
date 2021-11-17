@@ -12,6 +12,7 @@ import { auth } from "../../utils/firebase/firebase";
 import ShoppingCart from "../ShoppingCart/ShoppingCart";
 import ShoppingCartDropdown from "../ShoppingCart/ShoppingCartDropdown";
 import { selectCurrentUser } from "../../redux/user/selectors";
+import { selectCartVisibility } from "../../redux/cart/selectors";
 
 const Header = ({ currentUser, isCartHidden }) => {
   const { t } = useTranslation("menu");
@@ -50,12 +51,9 @@ Header.propTypes = {
   isCartHidden: PropTypes.bool
 };
 
-const mapStateToProps = (state) => {
-  const { cart } = state;
-  return {
-    currentUser: selectCurrentUser(state),
-    isCartHidden: cart.isCartHidden
-  };
-};
+const mapStateToProps = (state) => ({
+  currentUser: selectCurrentUser(state),
+  isCartHidden: selectCartVisibility(state)
+});
 
 export default connect(mapStateToProps)(Header);
