@@ -9,7 +9,7 @@ import { selectItems } from "../../redux/cart/selectors";
 
 const ShoppingCartDropdown = () => {
   const { t } = useTranslation("cart");
-  const items = useSelector(selectItems)
+  const items = useSelector(selectItems);
 
   return (
     <div className={theme.dropdown}>

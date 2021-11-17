@@ -7,7 +7,6 @@ import { toggleCartHidden as toggleCartHiddenAction } from "../../redux/cart/act
 import theme from "./ShoppingCart.module.scss";
 import { selectTotalItems } from "../../redux/cart/selectors";
 
-
 const ShoppingCart = ({ toggleCartHidden }) => {
   const totalItems = useSelector(selectTotalItems);
 
@@ -16,7 +15,7 @@ const ShoppingCart = ({ toggleCartHidden }) => {
       <ShoppingBagIcon className={theme.shoppingIcon} />
       <span className={theme.itemsCount}>{totalItems}</span>
     </div>
-  )
+  );
 };
 
 ShoppingCart.propTypes = {
