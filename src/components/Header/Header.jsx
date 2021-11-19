@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { connect } from 'react-redux';
+import { connect } from "react-redux";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
@@ -9,8 +9,12 @@ import endpoints from "../../lib/endpoints.json";
 import theme from "./Header.module.scss";
 
 import { auth } from "../../utils/firebase/firebase";
+import ShoppingCart from "../ShoppingCart/ShoppingCart";
+import ShoppingCartDropdown from "../ShoppingCart/ShoppingCartDropdown";
+import { selectCurrentUser } from "../../redux/user/selectors";
+import { selectCartVisibility } from "../../redux/cart/selectors";
 
-const Header = ({ currentUser }) => {
+const Header = ({ currentUser, isCartHidden }) => {
   const { t } = useTranslation("menu");
 
   return (
@@ -35,17 +39,21 @@ const Header = ({ currentUser }) => {
             {t("signIn")}
           </Link>
         )}
+        <ShoppingCart />
       </div>
+      {!isCartHidden && <ShoppingCartDropdown />}
     </div>
   );
 };
 
 Header.propTypes = {
-  currentUser: PropTypes.object
+  currentUser: PropTypes.object,
+  isCartHidden: PropTypes.bool
 };
 
 const mapStateToProps = (state) => ({
-  currentUser: state.user.currentUser
+  currentUser: selectCurrentUser(state),
+  isCartHidden: selectCartVisibility(state)
 });
 
 export default connect(mapStateToProps)(Header);

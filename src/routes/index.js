@@ -1,8 +1,9 @@
 import React from "react";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { Redirect, Route, Switch } from "react-router-dom";
 import { Home, Shop, SigninAndSignup } from "../views";
+import { selectCurrentUser } from "../redux/user/selectors";
 
 const Routes = ({ currentUser }) => (
   <Switch>
@@ -11,9 +12,9 @@ const Routes = ({ currentUser }) => (
       exact
       path="/signin"
       render={() => {
-        if (currentUser) return <Redirect to="/" />
+        if (currentUser) return <Redirect to="/" />;
 
-        return <SigninAndSignup />
+        return <SigninAndSignup />;
       }}
     />
     <Route exact path="/" component={Home} />
@@ -22,14 +23,10 @@ const Routes = ({ currentUser }) => (
 
 Routes.propTypes = {
   currentUser: PropTypes.object
-}
+};
 
-const mapStateToProps = (state) => {
-  const { user } = state;
-
-  return {
-    currentUser: user.currentUser
-  };
-}
+const mapStateToProps = (state) => ({
+  currentUser: selectCurrentUser(state)
+});
 
 export default connect(mapStateToProps)(Routes);

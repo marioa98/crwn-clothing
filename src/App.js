@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 
@@ -11,7 +11,6 @@ import { setCurrentUser as setCurrentUserAction } from "./redux/user/actions";
 import "./App.scss";
 
 const App = ({ setCurrentUser }) => {
-
   useEffect(() => {
     /**
      * Firebase observer that notifies for changes on the users' sign-in state and allows
@@ -61,7 +60,7 @@ App.propTypes = {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  setCurrentUser: user => dispatch(setCurrentUserAction(user))
+  setCurrentUser: (user) => dispatch(setCurrentUserAction(user))
 });
 
 export default connect(null, mapDispatchToProps)(App);
