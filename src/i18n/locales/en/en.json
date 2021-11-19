@@ -6,7 +6,8 @@
   },
   "cart": {
     "add": "Add to cart",
-    "checkout": "Go to checkout"
+    "checkout": "Go to checkout",
+    "empty": "Your cart is empty"
   },
   "inputs": {
     "confirmPassword": "Confirm password",

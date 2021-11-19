@@ -14,9 +14,11 @@ const ShoppingCartDropdown = () => {
   return (
     <div className={theme.dropdown}>
       <div className={theme.items}>
-        {items.map((item) => (
-          <ShoppingCartItem key={item?.id} item={item} />
-        ))}
+        {items.length ? (
+          items.map((item) => <ShoppingCartItem key={item?.id} item={item} />)
+        ) : (
+          <span className={theme.emptyCart}>{t("empty")}</span>
+        )}
       </div>
       <Button>{t("checkout")}</Button>
     </div>
