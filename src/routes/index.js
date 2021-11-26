@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { Redirect, Route, Switch } from "react-router-dom";
-import { Home, Shop, SigninAndSignup } from "../views";
+import { Checkout, Home, Shop, SigninAndSignup } from "../views";
 import { selectCurrentUser } from "../redux/user/selectors";
 
 const Routes = ({ currentUser }) => (
@@ -17,6 +17,7 @@ const Routes = ({ currentUser }) => (
         return <SigninAndSignup />;
       }}
     />
+    <Route exact path="/checkout" component={Checkout} />
     <Route exact path="/" component={Home} />
   </Switch>
 );

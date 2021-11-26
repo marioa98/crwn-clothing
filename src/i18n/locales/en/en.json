@@ -9,6 +9,14 @@
     "checkout": "Go to checkout",
     "empty": "Your cart is empty"
   },
+  "checkoutPage": {
+    "description": "Description",
+    "quantity": "Quantity",
+    "price": "Price",
+    "product": "Product",
+    "remove": "Remove",
+    "total": "Total"
+  },
   "inputs": {
     "confirmPassword": "Confirm password",
     "displayName": "Display name",

@@ -1,5 +1,7 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { useSelector } from "react-redux";
+import { withRouter } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import Button from "../shared/Button/Button";
 
@@ -7,7 +9,7 @@ import theme from "./ShoppingCartDropdown.module.scss";
 import ShoppingCartItem from "../ShoppingCartItem/ShoppingCartItem";
 import { selectItems } from "../../redux/cart/selectors";
 
-const ShoppingCartDropdown = () => {
+const ShoppingCartDropdown = ({ history }) => {
   const { t } = useTranslation("cart");
   const items = useSelector(selectItems);
 
@@ -20,9 +22,13 @@ const ShoppingCartDropdown = () => {
           <span className={theme.emptyCart}>{t("empty")}</span>
         )}
       </div>
-      <Button>{t("checkout")}</Button>
+      <Button onClick={() => history.push("/checkout")}>{t("checkout")}</Button>
     </div>
   );
 };
 
-export default ShoppingCartDropdown;
+ShoppingCartDropdown.propTypes = {
+  history: PropTypes.object
+};
+
+export default withRouter(ShoppingCartDropdown);
