@@ -16,7 +16,7 @@ const ShoppingCartDropdown = ({ dispatch, history, items }) => {
   const onCartCheckout = () => {
     dispatch(toggleCartHidden());
     history.push("/checkout");
-  }
+  };
 
   return (
     <div className={theme.dropdown}>
@@ -40,6 +40,6 @@ ShoppingCartDropdown.propTypes = {
 
 const mapStateToProps = (state) => ({
   items: selectItems(state)
-})
+});
 
 export default withRouter(connect(mapStateToProps)(ShoppingCartDropdown));
