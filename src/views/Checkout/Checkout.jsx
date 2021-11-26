@@ -6,6 +6,7 @@ import { selectItems, selectTotalPrice } from "../../redux/cart/selectors";
 
 import theme from "./Checkout.module.scss";
 import toCurrency from "../../lib/toCurrency";
+import CheckoutItem from "./CheckoutItem/CheckoutItem";
 
 const Checkout = ({ items, totalPrice }) => {
   const { t } = useTranslation("checkoutPage");
@@ -30,9 +31,13 @@ const Checkout = ({ items, totalPrice }) => {
         </div>
       </div>
 
-      {items.map(item => item.name)}
+      {items.map((item) => (
+        <CheckoutItem key={item.id} item={item} />
+      ))}
       <div className={theme.total}>
-        <span>{t("total")}: {toCurrency(totalPrice)}</span>
+        <span>
+          {t("total")}: {toCurrency(totalPrice)}
+        </span>
       </div>
     </div>
   );
