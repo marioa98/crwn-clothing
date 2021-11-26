@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import theme from "./CheckoutItem.module.scss";
 import toCurrency from "../../../lib/toCurrency";
 
-const CheckoutItem = ({ item }) => {
+const CheckoutItem = ({ item, onRemove }) => {
   const { imageUrl, name, quantity, price } = item;
   return (
     <div className={theme.checkoutItem}>
@@ -14,7 +14,7 @@ const CheckoutItem = ({ item }) => {
       <span className={theme.name}>{name}</span>
       <span className={theme.quantity}>{quantity}</span>
       <span className={theme.price}>{toCurrency(price)}</span>
-      <div className={theme.removeButton}>&#10005;</div>
+      <div className={theme.removeButton} onClick={onRemove}>&#10005;</div>
     </div>
   );
 };
@@ -25,7 +25,8 @@ CheckoutItem.propTypes = {
     name: PropTypes.string,
     quantity: PropTypes.number,
     price: PropTypes.number
-  })
+  }),
+  onRemove: PropTypes.func
 };
 
 export default CheckoutItem;

@@ -17,6 +17,10 @@ const addItemToCart = (currentItems = [], newItem) => {
   return [...currentItems, { ...newItem, quantity: 1 }];
 };
 
+const clearItemFromCart = (currentItems = [], itemToClear) => 
+  currentItems.filter((item) => item.id !== itemToClear.id);
+
 export default {
-  addItemToCart
+  addItemToCart,
+  clearItemFromCart
 };
