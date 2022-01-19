@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { withRouter } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import Button from "../shared/Button/Button";
 
@@ -10,12 +10,13 @@ import ShoppingCartItem from "../ShoppingCartItem/ShoppingCartItem";
 import { selectItems } from "../../redux/cart/selectors";
 import { toggleCartHidden } from "../../redux/cart/actions";
 
-const ShoppingCartDropdown = ({ dispatch, history, items }) => {
+const ShoppingCartDropdown = ({ dispatch, items }) => {
   const { t } = useTranslation("cart");
+  const navigate = useNavigate();
 
   const onCartCheckout = () => {
     dispatch(toggleCartHidden());
-    history.push("/checkout");
+    navigate("/checkout");
   };
 
   return (
@@ -34,7 +35,6 @@ const ShoppingCartDropdown = ({ dispatch, history, items }) => {
 
 ShoppingCartDropdown.propTypes = {
   dispatch: PropTypes.func,
-  history: PropTypes.object,
   items: PropTypes.array
 };
 
@@ -42,4 +42,4 @@ const mapStateToProps = (state) => ({
   items: selectItems(state)
 });
 
-export default withRouter(connect(mapStateToProps)(ShoppingCartDropdown));
+export default connect(mapStateToProps)(ShoppingCartDropdown);
