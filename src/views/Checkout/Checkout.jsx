@@ -7,7 +7,7 @@ import { selectItems, selectTotalPrice } from "../../redux/cart/selectors";
 import theme from "./Checkout.module.scss";
 import toCurrency from "../../lib/toCurrency";
 import CheckoutItem from "./CheckoutItem/CheckoutItem";
-import { removeItem } from "../../redux/cart/actions";
+import { clearItem } from "../../redux/cart/actions";
 
 const Checkout = ({ dispatch, items, totalPrice }) => {
   const { t } = useTranslation("checkoutPage");
@@ -33,7 +33,7 @@ const Checkout = ({ dispatch, items, totalPrice }) => {
       </div>
 
       {items.map((item) => (
-        <CheckoutItem key={item.id} item={item} onRemove={() => dispatch(removeItem(item))} />
+        <CheckoutItem key={item.id} item={item} onRemove={() => dispatch(clearItem(item))} />
       ))}
       <div className={theme.total}>
         <span>
