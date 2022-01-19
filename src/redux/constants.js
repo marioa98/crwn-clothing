@@ -5,6 +5,8 @@ export const ACTIONS = {
   },
   cart: {
     ADD_ITEM: "ADD_ITEMS",
+    REMOVE_ITEM: "REMOVE_ITEM",
+    CLEAR_ITEM: "CLEAR_ITEM",
     TOGGLE_CART_HIDDEN: "TOGGLE_CART_HIDDEN"
   }
 };

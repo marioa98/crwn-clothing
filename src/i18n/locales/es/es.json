@@ -6,7 +6,16 @@
   },
   "cart": {
     "add": "Agregar al carrito",
-    "checkout": "Proceder al pago"
+    "checkout": "Proceder al pago",
+    "empty": "Tu carrito está vacío"
+  },
+  "checkoutPage": {
+    "description": "Descripción",
+    "quantity": "Cantidad",
+    "price": "Precio",
+    "product": "Producto",
+    "remove": "Eliminar",
+    "total": "Total"
   },
   "inputs": {
     "confirmPassword": "Confirmar contraseña",
