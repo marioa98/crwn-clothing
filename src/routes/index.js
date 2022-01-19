@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { Redirect, Route, Router } from "react-router-dom";
+import { Navigate, Route, Router } from "react-router-dom";
 import { Checkout, Home, Shop, SigninAndSignup } from "../views";
 import { selectCurrentUser } from "../redux/user/selectors";
 
@@ -12,7 +12,7 @@ const Routes = ({ currentUser }) => (
       exact
       path="/signin"
       render={() => {
-        if (currentUser) return <Redirect to="/" />;
+        if (currentUser) return <Navigate to="/" />;
 
         return <SigninAndSignup />;
       }}
