@@ -5,13 +5,17 @@
     "node": true
   },
   "extends": ["plugin:react/recommended", "airbnb", "prettier"],
-  "parser": "babel-eslint",
+  "parser": "@babel/eslint-parser",
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
     },
     "ecmaVersion": 12,
-    "sourceType": "module"
+    "sourceType": "module",
+    "requireConfigFile": false,
+    "babelOptions": {
+      "presets": ["@babel/preset-react"]
+    }
   },
   "plugins": ["react", "prettier", "jest", "react-hooks"],
   "rules": {
@@ -49,6 +53,7 @@
     "jsx-a11y/label-has-associated-control": "off",
     "react/prefer-stateless-function": "warn",
     "no-useless-return": "off",
-    "consistent-return": "off"
+    "consistent-return": "off",
+    "react/function-component-definition": "off"
   }
 }

@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import theme from "./MenuItem.module.scss";
 

@@ -1,6 +1,6 @@
 {
   "contact": "/contact",
-  "signIn": "/signIn",
+  "signIn": "/signin",
   "shop": {
     "root": "/shop"
   }
